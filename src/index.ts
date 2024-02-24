@@ -1,9 +1,10 @@
 import express from "express";
 import "dotenv/config";
 import mongoose from "mongoose";
+import { logger } from "./loggers/logger";
 
 mongoose.connect(process.env.db!).then(() => {
-  console.log("Connected to the database");
+  logger.info("Connected to the database");
 });
 const app = express();
 
